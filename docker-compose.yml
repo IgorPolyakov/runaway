@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  service_runaway_db:
+    build:
+      context: .
+      dockerfile: ./docker/db/Dockerfile
+    ports:
+      - '5701:5432'
+
+  service_runaway_server:
+    build:
+      context: .
+      dockerfile: ./docker/server/Dockerfile
+    links:
+      - service_runaway_db
+    ports:
+      - '5702:3000'
