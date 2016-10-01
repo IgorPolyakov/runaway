@@ -24,6 +24,8 @@ RUN rake db:create
 
 RUN rake db:migrate
 
+RUN bundle exec rake assets:precompile --trace
+
 EXPOSE 3000
 
 CMD rails server -b 0.0.0.0
