@@ -16,20 +16,14 @@ ADD Gemfile.lock /$APP_NAME/Gemfile.lock
 WORKDIR /$APP_NAME
 RUN bundle install
 
+ENV RAILS_ENV production
+
 COPY . /$APP_NAME
 
-# RUN rake db:create
+RUN rake db:create
 
-# RUN rake db:migrate
+RUN rake db:migrate
 
 EXPOSE 3000
 
 CMD rails server -b 0.0.0.0
-
-# RUN bundle exec rake \
-# 	RAILS_ENV=production \
-# 	DATABASE_URL=postgresql://fox:fox@192.168.99.100:5702/runaway_prod \
-# 	SECRET_TOKEN=pickasecuretoken \
-# 	assets:precompile
-
-# CMD bundle exec unicorn -c config/unicorn.rb
