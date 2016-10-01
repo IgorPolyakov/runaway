@@ -37,8 +37,8 @@
               <th>description</th>
               <th>length</th>
               <th>power</th>
-              <th>up_meter</th>
-              <th>created_at.to_date</th>
+              <th>up meter</th>
+              <th>created</th>
             </tr>
             </thead>
             <tbody>
@@ -70,7 +70,7 @@
 
                   myMap= new ymaps.Map("map", {
                     center: [55.72, 37.44],
-                    zoom: 10
+                    zoom: 9
                   }, {
                     searchControlProvider: 'yandex#search'
                   });
@@ -81,7 +81,10 @@
                     center: [1, 1],
                     success: function (data) {
                       var data = data[0] || {};
-//                      console.log(data[0][0]);
+                     // console.log(data[0][0]);
+                      // var start = eval(data.coords)
+                      // myMap.setCenter(start[0])
+                      // console.log(start[0])
                       var myPolyline = new ymaps.Polyline(eval(data.coords), {
                         balloonContent: "Ломаная линия"
                       }, {
@@ -92,6 +95,7 @@
                       });
                       myMap.geoObjects
                           .add(myPolyline);
+
                     }
                   });
               });
