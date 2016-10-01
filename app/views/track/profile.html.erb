@@ -1,0 +1,40 @@
+<div id="page-wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">Information</h1>
+    </div>
+  </div>
+  <div class="col-lg-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        Profile
+      </div>
+      <div class="panel-body">
+        <table class="table table-user-information">
+          <tbody>
+          <tr>
+            <td>Joined</td>
+            <td><%= current_user.created_at %></td>
+          </tr>
+          <tr>
+            <td>Name:</td>
+            <td><%= current_user.name %></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><%= current_user.email %></td>
+          </tr>
+          <tr>
+            <td>Home Address</td>
+            <td><%= current_user.address %></td>
+          </tr>
+          <tr>
+            <td>User Id</td>
+            <td><%= current_user.id %></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

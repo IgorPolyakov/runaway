@@ -1,0 +1,15 @@
+<div class = "container">
+  <div class="wrapper .text-center">
+    <h3 class="form-signin-heading">Hello! Please Sign up!</h3>
+    <div class="col-lg-6">
+      <%= simple_form_for :user, url: '/users' do |f| %>
+          <%= f.input :name, label: 'Your name please', error: 'Username is mandatory, please specify one' %>
+          <%= f.input :email, placeholder: 'user@somemail.com' %>
+          <%= f.input :address, placeholder: 'The Shelbourne Hotel 27 St Stephen\'s Green Dublin D02 H529' %>
+          <%= f.input :password, hint: 'No special characters.', placeholder: 'Password'  %>
+          <%= f.input :password_confirmation, placeholder: 'Enter it again' %>
+          <%= f.button :submit, class: 'btn btn-default btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

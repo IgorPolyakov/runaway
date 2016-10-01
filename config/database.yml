@@ -1,0 +1,16 @@
+development: &development
+  adapter: postgresql
+  database: runaway_dev
+  username: fox
+  password: fox
+  host:     localhost
+  schema_search_path: public
+  min_messages: warning
+
+test:
+  <<: *development
+  database: runaway_test
+
+production:
+  <<: *development
+  database: runaway_prod

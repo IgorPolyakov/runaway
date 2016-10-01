@@ -1,0 +1,19 @@
+// Place all the styles related to the Track controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+body {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background: transparent;
+}
+
+.full {
+  background: url(http://openears.org.uk/wp-content/uploads/2016/07/best-running-shoes-for-high-arches.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
