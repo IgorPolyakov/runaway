@@ -1,17 +1,28 @@
-FROM ruby:2.1-alpine
+FROM ruby:2.3
 
-RUN apk add --update nodejs
-RUN apk add build-base
+ENV APP_NAME runaway
 
-COPY Gemfile /server/Gemfile
-WORKDIR /server
+RUN apt-get update -qq && apt-get install -y build-essential
+
+RUN apt-get install -y libpq-dev
+
+RUN apt-get install -y libxml2-dev libxslt1-dev
+
+RUN apt-get install -y nodejs
+
+ADD Gemfile /$APP_NAME/Gemfile
+ADD Gemfile.lock /$APP_NAME/Gemfile.lock
+
+WORKDIR /$APP_NAME
 RUN bundle install
 
-COPY . /server
+COPY . /$APP_NAME
 
 # RUN rake db:create
 
 # RUN rake db:migrate
+
+EXPOSE 3000
 
 CMD rails server -b 0.0.0.0
 
