@@ -38,7 +38,7 @@
               <th>length</th>
               <th>power</th>
               <th>up meter</th>
-              <th>created</th>
+              <th>added</th>
             </tr>
             </thead>
             <tbody>
@@ -46,9 +46,9 @@
                 <tr class="track" style="cursor: pointer" data-id="<%= track.id %>">
                   <td><%= track.id %></td>
                   <td><%= track.description %></td>
-                  <td><%= track.length %></td>
-                  <td><%= track.power %></td>
-                  <td><%= track.up_meter %></td>
+                  <td><%= track.length.round(2) %></td>
+                  <td><%= track.power.round(2) %></td>
+                  <td><%= track.up_meter.round(2) %></td>
                   <td><%= l track.created_at.to_date %></td>
                 </tr>
             <% end %>
