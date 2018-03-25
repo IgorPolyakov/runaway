@@ -14,6 +14,9 @@ Some feathure:
 * get full statistic;
 * very security.
 
+## Preview
+
+![alt text](https://github.com/IgorPolyakov/runaway/raw/84ff93b9a52b5789a08d360679410478d4f44b52/pic/dashboard.png)
 
 ## Versioning
 
