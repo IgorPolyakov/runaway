@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   layout 'page'
-  def new
-  end
+  def new; end
 
   def create
     user = User.new(user_params)
@@ -15,9 +16,9 @@ class UsersController < ApplicationController
     end
   end
 
-private
+  private
 
   def user_params
-    params.require(:user).permit(:name, :email, :address, :data,  :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :address, :data, :password, :password_confirmation)
   end
 end

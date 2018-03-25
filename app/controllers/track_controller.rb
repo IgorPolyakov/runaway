@@ -1,21 +1,22 @@
+# frozen_string_literal: true
+
 class TrackController < ApplicationController
   before_action :authorize
 
-  def new
-  end
+  def new; end
 
   def status
     @total_power = current_user.tracks.sum(:power)
     @total_length = current_user.tracks.sum(:length)
-    @total_meter_up= current_user.tracks.sum(:up_meter)
+    @total_meter_up = current_user.tracks.sum(:up_meter)
     @total_time = current_user.tracks.sum(:hour)
   end
 
   def view
     if params[:id]
-      render :json => Track.where(id: params[:id])
+      render json: Track.where(id: params[:id])
     else
-      render :json => Track.all
+      render json: Track.all
     end
   end
 
@@ -36,7 +37,9 @@ class TrackController < ApplicationController
       flash.now[:danger] = 'Try again'
     end
   end
-private
+
+  private
+
   def track_params
     params.require(:track).permit(:name, :description, :gpx)
   end

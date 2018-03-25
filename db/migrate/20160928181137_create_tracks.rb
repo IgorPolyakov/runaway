@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateTracks < ActiveRecord::Migration[5.0]
   def change
     create_table :tracks do |t|
@@ -9,7 +11,7 @@ class CreateTracks < ActiveRecord::Migration[5.0]
       t.float :hour
       t.text :data
       t.binary :gpx
-			t.references :user, foreign_key: true
+      t.references :user, foreign_key: true
       t.timestamps null: false
     end
   end
