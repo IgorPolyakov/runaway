@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.5.0'
 gem 'bcrypt'
 gem 'bootstrap-sass'
 gem 'coffee-rails'
@@ -13,9 +14,6 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'tzinfo-data'
 gem 'uglifier'
-# group :doc do
-#     gem 'sdoc', require: false
-# end
 
 group :test do
   gem 'rspec-rails'
