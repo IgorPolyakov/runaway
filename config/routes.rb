@@ -1,5 +1,6 @@
-Runaway::Application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   get '/dashboard' => 'track#index'
   get '/status' => 'track#status'
   get '/new' => 'track#new'
@@ -18,7 +19,6 @@ Runaway::Application.routes.draw do
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
 
-  get '/start' => 'runaway#start'  
+  get '/start' => 'runaway#start'
   get '/about' => 'runaway#about'
-
 end

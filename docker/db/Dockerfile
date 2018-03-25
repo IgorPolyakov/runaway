@@ -1,4 +1,4 @@
-FROM postgres:9.5
+FROM postgres:10
 
 ENV POSTGRES_PASSWORD=fox \
     POSTGRES_USER=fox \

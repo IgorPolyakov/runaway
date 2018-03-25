@@ -1,8 +1,8 @@
 development: &development
   adapter: postgresql
   database: runaway_dev
-  username: fox
-  password: fox
+  username: postgres
+  password: postgres
   host:     localhost
   schema_search_path: public
   min_messages: warning
