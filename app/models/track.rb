@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'gpx'
-class Track < ApplicationRecord
+class Track < ActiveRecord::Base
   belongs_to :user
   validates :gpx, presence: true
 

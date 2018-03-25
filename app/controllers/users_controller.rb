@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       flash.now[:success] = 'Correct'
     else
       redirect_to '/signup'
-      flash.now[:danger] = 'Uncorrect'
+      flash.now[:danger] = 'Uncorrected'
     end
   end
 

@@ -9,10 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require font-awesome
 # *= require_tree .
  */
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "font-awesome";
 @import url(sb-admin.css);
