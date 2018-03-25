@@ -1,28 +1,29 @@
-engines:
-  rubocop:
+---
+version: "2"
+plugins:
+  brakeman:
     enabled: true
-    #checks:
-    #	Rubocop/Metrics/ClassLength:
-    #  	enabled: false
-  golint:
-   	enabled: true
-  eslint:
-    enabled: true
-  csslint:
+  bundler-audit:
     enabled: true
   duplication:
-  	enabled: true
+    enabled: true
     config:
-    	languages:
+      languages:
       - ruby
-      	#mass_threshold: 30
-      - javascript
-ratings:
-  paths:
-  - app/**
-  - lib/**
-  - "**.rb"
-  - "**.go"
-exclude_paths:
-- spec/**/*
-- "**/vendor/**/*"
+    exclude_patterns:
+      - spec/
+  fixme:
+    enabled: true
+  rubocop:
+    enabled: true
+    checks:
+      Rubocop/Style/FrozenStringLiteralComment:
+        enabled: false
+  reek:
+    enabled: true
+exclude_patterns:
+- bin/
+- config/
+- public/
+- tmp/
+- db/
