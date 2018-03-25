@@ -5,6 +5,7 @@
 *.rbc
 capybara-*.html
 .rspec
+.idea
 /log
 /tmp
 /db/*.sqlite3
